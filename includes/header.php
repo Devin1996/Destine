@@ -31,10 +31,9 @@ background-color:#393939;
 				$first_name = $row['f_name'];
 				$last_name = $row['l_name'];
 				$describe_user = $row['describe_user'];
-				$Relationship = $row['Relationship'];
 				$user_pass = $row['user_pass'];
 				$user_email = $row['user_email'];
-				$user_country = $row['user_country'];
+				$user_dis = $row['user_dis'];
 				$user_gender = $row['user_gender'];
 				$user_birthday = $row['user_birthday'];
 				$user_image = $row['user_image'];
@@ -48,8 +47,8 @@ background-color:#393939;
 				?>
 				<li><a href='profile.php?<?php echo "u_id=$user_id" ?>'><?php echo"$first_name"?></a></li>
 				<li><a href="home.php">Home</a></li>
-				<li><a href="home.php">Find Needs</a></li>
-				<li><a href="home.php">Messages </a></li>
+				<li><a href="findneeeds.php">Find Needs</a></li>
+				<li><a href="messages.php">Messages </a></li>
 				<?php
 					echo"
 						<li class='dropdown'>

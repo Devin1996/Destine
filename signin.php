@@ -10,7 +10,10 @@
 </head>
 <style type="text/css">
 	body{
-		overflow-x:hidden; 
+		overflow-x:hidden;
+
+		height:100%;
+		 
 	}
 	.main-content{
 		width: 50%;
@@ -47,8 +50,16 @@
 		font-family: 'Overpass Mono',monospace;
 		letter-spacing: -1px;
 	}
+
+	.bdy{
+		background-image:url(images/i6.jpg);
+		height : 100%;
+		background-position:center;
+		background-repeat:no-repeat;
+		background-size: cover;
+	}
 </style>
-<body>
+<body class="bdy">
 <div class="row">
 	<div class="col-sm-12">
 		<div class="well">
@@ -60,7 +71,7 @@
 	<div class="col-sm-12">
 		<div class="main-content">
 			<div class="header">
-				<h3 style="text-align: center;"><strong>Login to Destine</strong></h3>				
+				<h3 style="text-align: center;"><strong>Login to Regular Customer Account</strong></h3>				
 			</div>
 			<div class="1-part">
 				<form action="" method="post">

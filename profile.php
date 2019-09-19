@@ -26,7 +26,7 @@ else{ ?>
 	    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-	    <link rel="stylesheet" href="styles/home_style2.css" media="all"/>
+	    <link rel="stylesheet" href="style/homestyle.css" media="all"/>
 </head>
 <style>
 #cover-img{
@@ -42,17 +42,19 @@ else{ ?>
   	position: absolute;
   	top: 150px;
   	cursor: pointer;
-  	left: 93px;
+  	left: 92px;
   	border-radius: 4px;
-  	background-color: rgba(0,0,0,0.1);
-  	transform: translate(-50%, -50%);
+  	background-color: rgba(0,0,0,0.5);
+	  transform: translate(-50%, -50%);
+	  width:100px;
 }
 #button_profile{
   	position: absolute;
   	top: 115%;
   	left: 50%;
   	cursor: pointer;
-  	transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	background-color:#393939;
 }
 #own_posts{
     border: 5px solid #e6e6e6;
@@ -61,6 +63,10 @@ else{ ?>
 #posts_img {
     height:300px;
    	width:100%;
+}
+
+.upbtn{
+	background-color:#393939;
 }
 
 
@@ -78,13 +84,14 @@ else{ ?>
 					<ul class='nav pull-left' style='position: absolute;top: 10px;left: 40px;'>
 				    	<li class='dropdown'>
 				        	<button class='dropdown-toggle btn btn-default' data-toggle='dropdown'>Change Cover</button> 
-				        	<div class='dropdown-menu'>
+							
+							<div class='dropdown-menu'>
 				        		<center>
-				        		<p> Click <strong>Select Cover</strong> and then click the <br> <strong>Update Cover</strong></p>
-				            	<label class='btn btn-info'> Select Cover
-						        <input type='file' name='u_cover' size='60' />
+				        		<p> Click Select Cover and then click Update Cover</p>
+								
+								<label class='btn'>Select Cover<input type='file' name='u_cover' size='60' />
 						        </label><br><br>
-				                <button name='submit' class='btn btn-info'>Update cover</button>
+				                <button name='submit' class='btn' >Update cover</button>
 				            	</center>
 				            </div>
 				        </li>
@@ -94,10 +101,11 @@ else{ ?>
          	<div id='profile_img'>
 	            <img src='users/$user_image' alt='Profile' class='img-circle' width='180px' height='185px' />
 	            <form action='profile.php?u_id=$user_id' method='post' enctype='multipart/form-data'>
-	            <label id='update_profile'> Select Profile
+				
+				<label id='update_profile'>Select Image
 	            <input type='file' name='u_image' size='60' />
 	            </label>
-	            <button id='button_profile' name='update' class='btn btn-info'>Update Profile</button>
+	            <button id='button_profile' name='update' class='btn'>Update Profile</button>
 	            </form>
           	</div><br>
           "; ?>
@@ -124,7 +132,6 @@ else{ ?>
               
               if($run){
               
-              echo "<script>alert('Your Cover Updated!')</script>";
               echo "<script>window.open('profile.php?u_id=$user_id','_self')</script>";
               }
             }
@@ -156,8 +163,7 @@ else{ ?>
               $run = mysqli_query($con,$update); 
               
               if($run){
-              
-              echo "<script>alert('Your Profile Updated!')</script>";
+            
               echo "<script>window.open('profile.php?u_id=$user_id','_self')</script>";
               }
             }
@@ -178,8 +184,7 @@ else{ ?>
 		<center><h2><strong>About</strong></h2></center><br>
 		<center><h4><strong>$first_name $last_name</strong></h4></center>
         <p><strong><i style='color:grey;'> $describe_user</i></strong></p><br>
-        <p><strong>Relationship Status: </strong> $Relationship_status</p><br>
-        <p><strong>Lives In: </strong> $user_country</p><br>
+        <p><strong>Lives In: </strong> $user_dis</p><br>
         <p><strong>Member Since: </strong> $register_date</p><br>
         <p><strong>Gender: </strong>  $user_gender</p><br>
         <p><strong>Date Of Birth: </strong>  $user_birthday</p><br>
@@ -326,8 +331,8 @@ else{ ?>
 			}else{
 
 			echo"
-				<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn btn-success'>View</button></a>
-				<a href='edit_post.php?post_id=$post_id' style='float:right;'><button  class='btn btn-info'>Edit</button></a>
+				<a href='p_view.php?post_id=$post_id' style='float:right;'><button class='btn btn-success'>View</button></a>
+				<a href='edit_post.php?post_id=$post_id' style='float:right;'><button  class='btn'>Edit</button></a>
 				<a href='functions/delete_post.php?post_id=$post_id' style='float:right;'><button class='btn btn-danger'>Delete</button></a>
 			</div><br/><br/><br/>
 			";

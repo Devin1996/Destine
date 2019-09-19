@@ -18,21 +18,21 @@
 		position: absolute;
 		font-size: 10vw;
 		top:34%;
-		left:30%;
+		left:45%;
 		transform: translate(-50%, -50px); 
 	}
 	#centered2{
 		position: absolute;
 		font-size: 10vw;
 		top: 54%;
-		left:34%;
+		left:45%;
 		transform: translate(-50%, -50px); 
 	}
 	#centered3{
 		position: absolute;
 		font-size: 10vw;
 		top: 74%;
-		left:34%;
+		left:45%;
 		transform: translate(-50%, -50px); 
 	}
 
@@ -87,19 +87,19 @@
 
 	<div class="row">
 		<div class="col-sm-6" style="Left:1%;">
-			<img src="images/mainpagepic21.jpg" class="img-rounded" title="Destine" width="650px" height="634px">
+			<img src="images/isf.jpg" class="img-rounded" title="Destine" width="650px" height="634px">
 			
-			<div id="centered1" class="centered"><h3 style="color:white;">
+			<div id="centered1" class="centered"><h3 style="color:#e6e6e6;">
 				<span class="glyphicon glyphicon-search"></span>
-					&nbsp&nbsp<strong>Plan Your Project</strong></h3></div>
+					&nbsp&nbsp<strong>Plan Your Dream</strong></h3></div>
 
 			<div id="centered2" class="centered"><h3 style="color:white;">
 				<span class="glyphicon glyphicon-search"></span>
-					&nbsp&nbsp<strong>Manage Your Project</strong></h3></div>
+					&nbsp&nbsp<strong>Manage Your Dream</strong></h3></div>
 
 			<div id="centered3" class="centered"><h3 style="color:white;">
 				<span class="glyphicon glyphicon-search"></span>		
-					&nbsp&nbsp<strong>Success Your Project</strong></h3></div>
+					&nbsp&nbsp<strong>Success Your Dream</strong></h3></div>
 
 			</div>
 		

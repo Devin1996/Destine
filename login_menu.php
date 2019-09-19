@@ -18,21 +18,21 @@
 		position: absolute;
 		font-size: 10vw;
 		top:34%;
-		left:30%;
+		left:45%;
 		transform: translate(-50%, -50px); 
 	}
 	#centered2{
 		position: absolute;
 		font-size: 10vw;
-		top: 54%;
-		left:34%;
+		top: 58%;
+		left:45%;
 		transform: translate(-50%, -50px); 
 	}
 	#centered3{
 		position: absolute;
 		font-size: 10vw;
-		top: 74%;
-		left:34%;
+		top: 78%;
+		left:45%;
 		transform: translate(-50%, -50px); 
 	}
 
@@ -87,19 +87,19 @@
 
 	<div class="row">
 		<div class="col-sm-6" style="Left:1%;">
-			<img src="images/mainpagepic21.jpg" class="img-rounded" title="Destine" width="650px" height="634px">
+			<img src="images/usr1.jpg" class="img-rounded" title="Destine" width="650px" height="634px">
 			
-			<div id="centered1" class="centered"><h3 style="color:white;">
-				<span class="glyphicon glyphicon-search"></span>
-					&nbsp&nbsp<strong>Plan Your Project</strong></h3></div>
+			<div id="centered1" class="centered"><h3 style="color:#393939;">
+				<span class="glyphicon glyphicon-list"></span>
+					&nbsp&nbsp<strong> Log in With your account type</strong></h3></div>
 
-			<div id="centered2" class="centered"><h3 style="color:white;">
-				<span class="glyphicon glyphicon-search"></span>
-					&nbsp&nbsp<strong>Manage Your Project</strong></h3></div>
+			<div id="centered2" class="centered"><h3 style="color:#393939;">
+				<span class="glyphicon glyphicon-list"></span>
+					&nbsp&nbsp<strong>Get services</strong></h3></div>
 
-			<div id="centered3" class="centered"><h3 style="color:white;">
-				<span class="glyphicon glyphicon-search"></span>		
-					&nbsp&nbsp<strong>Success Your Project</strong></h3></div>
+			<div id="centered3" class="centered"><h3 style="color:#393939;">
+				<span class="glyphicon glyphicon-list"></span>		
+					&nbsp&nbsp<strong>provide services</strong></h3></div>
 
 			</div>
 		
@@ -122,13 +122,13 @@
 				<button id="reg_menu_btn" class="btn btn-info btn-lg" name="coreg">Company Login</button><br><br>
 				<?php
 					if (isset($_POST['coreg'])) {
-						echo "<script>window.open('company_reg.php','_self')</script>";
+						echo "<script>window.open('company_login.php','_self')</script>";
 					}
 				?>
                 <button id="reg_menu_btn" class="btn btn-info btn-lg" name="ireg">Induvidual Service Provider Login</button><br><br>
 				<?php
 					if (isset($_POST['ireg'])) {
-						echo "<script>window.open('induvidual_reg.php','_self')</script>";
+						echo "<script>window.open('induvidual_login.php','_self')</script>";
 					}
 				?>
 		</div>

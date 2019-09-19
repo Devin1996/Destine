@@ -99,12 +99,6 @@ img {vertical-align: middle;}
 @media only screen and (max-width: 300px) {
   .text {font-size: 11px}
 }
-
-.ask{
-width: 60%;
-		border-radius: 30px;
-		background-color:#393939;
-}
   </style>
 </head>
 <body>
@@ -118,7 +112,7 @@ width: 60%;
     <label class="btn btn-warning" id="upload_image_button">Select image
     <input type="file" name="upload_image" size="30"></label>
           
-    <button  style="background-color:#393939;" id="btn-post" class="btn btn-info btn-lg" name="sub">ASK</button>
+    <button id="btn-post" class="btn btn-info btn-lg" name="sub">ASK</button>
       </form>
       <?php insertPost(); ?> 
     </center>
@@ -128,7 +122,7 @@ width: 60%;
   <div>
       <ul id="ul">
   <li id="li"><a  href="indfeed.php">Services from Induviduals</a></li>
-  <li id="li"><a href="home.php">Other Users Feeds</a></li>
+  <li id="li"><a href="comfeed.php">Other Users Feeds</a></li>
 
 
 </ul>
@@ -194,8 +188,8 @@ width: 60%;
   <li>30</li>
   <li>31</li>
 </ul>
-<p>Ad</p>
- <img src="images/ads.jpg" alt="ad" class="avatar" width="300" height="300">
+
+ <img src="side1.jpeg" alt="Avatar" class="avatar">
     </div>
     
     <div class="col-sm-6">
@@ -295,8 +289,9 @@ function drawHand(ctx, pos, length, width) {
 <br>
 <br>
 
-<p>Ad</p>
- <img src="images/ad2.jpg" alt="ad" class="avatar" width="300" height="300">2    </div>
+
+<img src="side2.jpg" width="350" height="350" >
+    </div>
   </div>
 </div>
 

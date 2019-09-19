@@ -6,7 +6,7 @@ include("includes/connection.php");
 		$last_name = htmlentities(mysqli_real_escape_string($con,$_POST['last_name']));
 		$pass = htmlentities(mysqli_real_escape_string($con,$_POST['u_pass']));
 		$email = htmlentities(mysqli_real_escape_string($con,$_POST['u_email']));
-		$country = htmlentities(mysqli_real_escape_string($con,$_POST['u_district']));
+		$dis = htmlentities(mysqli_real_escape_string($con,$_POST['u_district']));
 		$gender = htmlentities(mysqli_real_escape_string($con,$_POST['u_gender']));
 		$birthday = htmlentities(mysqli_real_escape_string($con,$_POST['u_birthday']));	
 		$status = "verified";
@@ -38,12 +38,12 @@ include("includes/connection.php");
 			else if($rand == 3)
 				$profile_pic = "User.png";
 
-			$insert = "insert into users (f_name,l_name,user_name,describe_user,Relationship,user_pass,user_email,user_country,user_gender,user_birthday,user_image,user_cover,user_reg_date,status,posts,recovery_account) 
-				values('$first_name','$last_name','$username','Hello.This is my default status!','...','$pass','$email','$country','$gender','$birthday','$profile_pic','download.jpg',NOW(),'status','$posts','DCMA.')";
+			$insert = "insert into users (f_name,l_name,user_name,describe_user,user_pass,user_email,user_dis,user_gender,user_birthday,user_image,user_cover,user_reg_date,status,posts,recovery_account) 
+				values('$first_name','$last_name','$username','USER','$pass','$email','$dis','$gender','$birthday','$profile_pic','download.jpg',NOW(),'status','$posts','DCMA.')";
 			$query = mysqli_query($con, $insert);
 
 			if ($query) {
-				echo "<script>alert('Well Done $first_name, you are good to go')</script>";
+				
 				echo "<script>window.open('signin.php', '_self')</script>";
 			}
 			else{
