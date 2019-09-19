@@ -45,12 +45,12 @@ include("includes/connection.php");
 				$profile_pic = "User.png";
 
 			$insert = "insert into company (c_name,cuser_name,cdescribe_user,c_tel,c_pass,c_email,c_area,c_cat,c_add,c_image,c_cover,c_reg_date,cstatus,cposts,crecovery_account) 
-				values('$c_name','$username','Hello.This is our default status!','$tel','$pass','$email','$area','$cat','$add','$profile_pic','download.jpg',NOW(),'status','$posts','DCMA.')";
+				values('$c_name','$username','Company','$tel','$pass','$email','$area','$cat','$add','$profile_pic','download.jpg',NOW(),'status','$posts','DCMA.')";
 			$query = mysqli_query($con, $insert);
 
 			if ($query) {
-				echo "<script>alert('Well Done $first_name, you are good to go')</script>";
-				echo "<script>window.open('company_reg.php', '_self')</script>";
+
+				echo "<script>window.open('company_login.php', '_self')</script>";
 			}
 			else{
 				echo "<script>alert('Registration failed,please try again!')</script>";

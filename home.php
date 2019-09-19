@@ -126,11 +126,9 @@ width: 60%;
   </div>
 
   <div>
-      <ul id="ul">
+  <ul id="ul">
   <li id="li"><a  href="indfeed.php">Services from Induviduals</a></li>
-  <li id="li"><a href="home.php">Other Users Feeds</a></li>
-
-
+  <li id="li"><a href="ufeedforu.php">Other Users Feeds</a></li>
 </ul>
 <br>
 </div>
@@ -199,7 +197,7 @@ width: 60%;
     </div>
     
     <div class="col-sm-6">
-      <center><h2><strong>Trends</strong></h2> <?php get_posts(); ?></center>
+      <center><h2><strong>Trends</strong></h2> <?php cget_posts(); ?></center>
 
       
     </div>

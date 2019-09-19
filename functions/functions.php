@@ -1,7 +1,7 @@
 <?php 
 
 $con = mysqli_connect("localhost","root","","destine") or die("Connection was not established");
-
+//Normal user Insert Post
 function insertPost(){
 	if(isset($_POST['sub'])){
 		global $con;
@@ -67,6 +67,73 @@ function insertPost(){
 		}
 
 	}
+
+	//Company INsert Post
+	function cinsertPost(){
+		if(isset($_POST['pub'])){
+			global $con;
+			global $c_id;
+	
+			$content = htmlentities($_POST['content']); 
+			$upload_image = $_FILES['upload_image']['name'];
+			$image_tmp = $_FILES['upload_image']['tmp_name'];
+			$random_number = rand(1,100);
+	
+			if(strlen($content) > 250){
+				echo "<script>alert('Please Use 250 or less than 250 words!')</script>";
+				echo "<script>window.open('comfeed.php', '_self')</script>";		
+			}else{
+				if(strlen($upload_image) >= 1 && strlen($content) >=1){
+				move_uploaded_file($image_tmp, "imagepost/$upload_image.$random_number");
+				$insert = "insert into cposts(user_id,post_content,upload_image,post_date) values('$c_id','$content','$upload_image.$random_number', NOW())";
+				$run = mysqli_query($con, $insert);
+	
+				if ($run) {
+					echo "<script>alert('Your poster updated a moment ago!')</script>";
+					echo "<script>window.open('comfeed.php', '_self')</script>";
+	
+					$update = "update company set cposts='yes' where c_id='$c_id'";
+				$run_update = mysqli_query($con, $update);
+				}
+				exit();
+			}else{
+				if($upload_image=='' && $content ==''){
+					echo "<script>alert('Error Occured while uploading!')</script>";
+					echo "<script>window.open('home.php', '_self')</script>";
+				}else{
+					if ($content=='') {
+						move_uploaded_file($image_tmp, "imagepost/$upload_image.$random_number");
+						$insert = "insert into cposts(user_id,post_content,upload_image,post_date) values ('$c_id','No','$upload_image.$random_number',NOW())";
+	
+						$run = mysqli_query($con, $insert);
+	
+				if ($run) {
+					echo "<script>alert('Your poster updated a moment ago!')</script>";
+					echo "<script>window.open('home.php', '_self')</script>";
+	
+					$update = "update users set posts='yes' where user_id='$c_id'";
+				$run_update = mysqli_query($con, $update);
+				}
+				exit();
+				}else{
+					$insert = "insert into cposts(user_id,post_content,post_date) values('$c_id','$content', NOW())";
+				$run = mysqli_query($con, $insert);
+	
+				if ($run) {
+					echo "<script>alert('Your post updated a moment ago!')</script>";
+					echo "<script>window.open('home.php', '_self')</script>";
+	
+					$update = "update users set cposts='yes' where user_id='$c_id'";
+				$run_update = mysqli_query($con, $update);
+				}
+				}
+					
+					}
+				}
+				}
+			}
+	
+		}
 
 	function get_posts(){
 		global $con;
@@ -170,6 +237,130 @@ function insertPost(){
 							</div>
 							<div class='col-sm-6'>
 								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3> 
+								<h3>$des_usr</h3> 
+								<h4><small>Asked on <strong>$post_date</strong></small></h4>
+							</div>
+							<div class='col-sm-4'>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-sm-12'>
+							<h3><p>$content</p></h3>
+							</div>
+						</div><br>
+						<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn'>ASK</button></a><br>
+					</div>
+					<div class='col-sm-3'>
+					</div>
+				</div><br><br>				
+";
+			}
+		}
+		include("pagination.php");  
+	}
+
+	function cget_posts(){
+		global $con;
+		$per_page = 5;
+
+		if (isset($_GET['page'])) {
+			$page = $_GET['page'];
+		}else{
+			$page=1;
+		}
+		$start_from = ($page-1) * $per_page;
+		$get_posts = "select * from cposts ORDER by 1 DESC LIMIT $start_from, $per_page";
+		$run_posts = mysqli_query($con, $get_posts );
+
+		while ($row_posts = mysqli_fetch_array($run_posts)) {
+			$post_id = $row_posts['post_id'];
+			$c_id = $row_posts['user_id'];
+			$content = substr($row_posts['post_content'],0,40);
+			$upload_image = $row_posts['upload_image'];
+			$post_date = $row_posts['post_date'];
+			
+			
+			$user = "select * from company where c_id = '$c_id' AND cposts='yes'";
+			$run_user = mysqli_query($con, $user);
+			$row_user = mysqli_fetch_array($run_user);
+
+			$c_name = $row_user['c_name'];
+			$user_image = $row_user['c_image'];
+			$des_usr=$row_user['cdescribe_user'];
+
+			if ($content=="No" && strlen($upload_image) >= 1) {
+				echo"
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div>
+					<div id='posts' >
+						<div class='row'>
+							<div class='col-sm-2'>
+							<p><img src='company/$user_image' class='img-circle' width='100px' height='100px'></p>
+							</div>
+							<div class='col-sm-6'>
+								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='user_profile.php?u_id=$c_id'>$c_name</a></h3>
+								<h3>$des_usr</h3> 
+								<h4><small>Asked on <strong>$post_date</strong></small></h4>
+							</div>
+							<div class='col-sm-4'>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-sm-12'>
+							<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
+							</div>
+						</div><br>
+						<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn'>ASK</button></a><br>
+					</div>
+					<div class='col-sm-3'>
+					</div>
+				</div><br><br>				
+";
+			}
+			else if (strlen($content) >= 1 && strlen($upload_image) >= 1){
+				echo"
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div>
+					<div id='posts' >
+						<div class='row'>
+							<div class='col-sm-2'>
+							<p><img src='company/$user_image' class='img-circle' width='100px' height='100px'></p>
+							</div>
+							<div class='col-sm-6'>
+								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='user_profile.php?u_id=$c_id'>$c_name</a></h3> 
+								<h3>$des_usr</h3> 
+								<h4><small>Asked on <strong>$post_date</strong></small></h4>
+							</div>
+							<div class='col-sm-4'>
+							</div>
+						</div>
+						<div class='row'>
+							<div class='col-sm-12'>
+							<p>$content</p> 
+							<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'> 
+							</div>
+						</div><br>
+						<a href='single.php?post_id=$post_id' style='float:right;'><button class='btn'>ASK</button></a><br>
+					</div>
+					<div class='col-sm-3'>
+					</div>
+				</div><br><br>				
+";
+			}
+			else{
+				echo"
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div>
+					<div id='posts'>
+						<div class='row'>
+							<div class='col-sm-2'>
+							<p><img src='company/$user_image' class='img-circle' width='100px' height='100px'></p>
+							</div>
+							<div class='col-sm-6'>
+								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='user_profile.php?u_id=$c_id'>$c_name</a></h3> 
 								<h3>$des_usr</h3> 
 								<h4><small>Asked on <strong>$post_date</strong></small></h4>
 							</div>
