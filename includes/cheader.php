@@ -34,8 +34,8 @@ background-color:#393939;
 				$c_pass = $row['c_pass'];
 				$c_email = $row['c_email'];
 				$c_area = $row['c_area'];
-				$c_gender = $row['c_tel'];
-				$c_birthday = $row['c_add'];
+				$c_tel = $row['c_tel'];
+				$c_add = $row['c_add'];
 				$c_image = $row['c_image'];
 				$c_cover = $row['c_cover'];			
 				$crecovery_account = $row['crecovery_account'];
@@ -45,7 +45,7 @@ background-color:#393939;
 				$run_posts = mysqli_query($con, $user_posts);
 				$posts = mysqli_num_rows($run_posts);
 				?>
-				<li><a href='cprofile.php?<?php echo "u_id=$user_id" ?>'><?php echo"$c_name"?></a></li>
+				<li><a href='cprofile.php?<?php echo "c_id=$c_id" ?>'><?php echo"$c_name"?></a></li>
 				<li><a href="uforc.php">Home</a></li>
 				<li><a href="findneeeds.php">Find Needs</a></li>
 				<?php

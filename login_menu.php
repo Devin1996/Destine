@@ -128,7 +128,7 @@
                 <button id="reg_menu_btn" class="btn btn-info btn-lg" name="ireg">Induvidual Service Provider Login</button><br><br>
 				<?php
 					if (isset($_POST['ireg'])) {
-						echo "<script>window.open('in_login.php','_self')</script>";
+						echo "<script>window.open('in_log.php','_self')</script>";
 					}
 				?>
 		</div>

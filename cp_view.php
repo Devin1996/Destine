@@ -1,11 +1,11 @@
 <!DOCTYPE html>
 <?php
 session_start();
-include("includes/header.php");
+include("includes/cheader.php");
 ?>
 <?php 
 
-if(!isset($_SESSION['user_email'])){
+if(!isset($_SESSION['c_email'])){
 	
 	header("location: index.php");
 
@@ -25,7 +25,7 @@ else{ ?>
 <div class="row">
 	<div class="col-sm-12">
 		<center><h2>ASK</h2><br></center>
-		<?php ind_post();?>
+		<?php cind_post();?>
 	</div>
 </div>
 </body>

@@ -45,7 +45,7 @@ include("includes/connection.php");
 
 			if ($query) {
 				echo "<script>alert('Well Done $first_name, you are good to go')</script>";
-				echo "<script>window.open('induvidual_reg.php', '_self')</script>";
+				echo "<script>window.open('in_log.php', '_self')</script>";
 			}
 			else{
 				echo "<script>alert('Registration failed,please try again!')</script>";
