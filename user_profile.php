@@ -2,6 +2,7 @@
 <?php
 session_start();
 include("includes/header.php");
+
 ?>
 <?php
 
@@ -10,6 +11,7 @@ if(!isset($_SESSION['user_email'])){
 	header("location: index.php");
 
 }
+
 else{ ?>
 <html>
 <head>

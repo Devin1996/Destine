@@ -122,7 +122,7 @@ img {vertical-align: middle;}
   <div>
       <ul id="ul">
   <li id="li"><a  href="indfeed.php">Services from Induviduals</a></li>
-  <li id="li"><a href="comfeed.php">Other Users Feeds</a></li>
+  <li id="li"><a href="ufeedforu.php">Other Users Feeds</a></li>
 
 
 </ul>
@@ -193,7 +193,7 @@ img {vertical-align: middle;}
     </div>
     
     <div class="col-sm-6">
-      <center><h2><strong>Trends</strong></h2> <?php get_posts(); ?></center>
+      <center><h2><strong>Trends</strong></h2> <?php iget_posts(); ?></center>
 
       
     </div>

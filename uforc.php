@@ -127,7 +127,7 @@ width: 60%;
 
   <div>
   <ul id="ul">
-  <li id="li"><a  href="indfeed.php">Services from Induviduals</a></li>
+  <li id="li"><a  href="iforc.php">Services from Induviduals</a></li>
   <li id="li"><a href="comfeed.php">Other Company Posters</a></li>
 </ul>
 <br>

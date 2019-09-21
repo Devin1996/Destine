@@ -1,0 +1,84 @@
+<?php
+include("includes/connection.php");
+include("functions/functions.php");
+?>
+<style>
+#search_btn{
+background-color:#393939;
+}
+</style>
+<nav class="navbar navbar-default">
+	<div class="container-fluid">
+		<div class="navbar-header">
+			<button type="button" class="navbar-toggle collapsed" data-target="#bs-example-navbar-collapse-1" data-toggle="collapsed" area-expanded="false">
+			<span class="sr-only">Toggle navigation</span>
+			<span class="icon-bar"></span>
+			<span class="icon-bar"></span>
+		 	<span class="icon-bar"></span>
+		 	</button>
+		 	<a href="ufori.php" class="navbar-brand">Destine</a>
+		</div>
+		<div class="collapse navbar-collapse" id="#bs-example-navbar-collapse-1">
+			<ul class="nav navbar-nav">
+				<?php
+				$user = $_SESSION['i_email'];
+				$get_user = "select * from ind where i_email='$user'";
+				$run_user = mysqli_query($con, $get_user);
+				$row = mysqli_fetch_array($run_user);
+
+				$i_id = $row['i_id'];
+				$user_name = $row['iuser_name'];
+				$first_name = $row['if_name'];
+				$last_name = $row['il_name'];
+				$describe_user = $row['idescribe_user'];
+				$user_pass = $row['i_pass'];
+				$user_email = $row['i_email'];
+				$user_gender = $row['i_gender'];
+				$user_birthday = $row['i_birthday'];
+				$user_image = $row['i_image'];
+				$user_cover = $row['i_cover'];			
+				$recovery_account = $row['irecovery_account'];
+				$register_date = $row['i_reg_date'];
+
+				$user_posts = "select * from iposts where user_id='$i_id'";
+				$run_posts = mysqli_query($con, $user_posts);
+				$posts = mysqli_num_rows($run_posts);
+				?>
+				<li><a href='cprofile.php?<?php echo "i_id=$i_id" ?>'><?php echo"$first_name"?></a></li>
+				<li><a href="ufori.php">Home</a></li>
+				<li><a href="findusers.php">Find Users</a></li>
+				<?php
+					echo"
+						<li class='dropdown'>
+							<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span><i class='glyphicon glyphicon-chevron-down'></i></span></a>
+							<ul class='dropdown-menu'>
+								<li>
+									<a href='imy_post.php?u_id=$i_id'>My Posts <span class='badge badge-secondary'>$posts</span>
+									</a>
+								</li>
+								<li>
+									<a href='iedit_profile.php?u_id=$i_id'>Edit Account 
+									</a>
+								</li>
+								<li role='separator' class='driver'></li>
+								<li>
+									<a href='logout.php'>Logout</a>
+								</li>
+							</ul>
+						</li>
+				";
+				?>
+			</ul>
+		 	<ul class="nav navbar-nav navbar-right">
+				<li class="dropdown">
+					<form class="navbar-form navbar-left" method="get" action="results.php">
+						<div class="form-group">
+							<input type="text" class="form-control" name="user_query" placeholder="Search">
+						</div>
+						<button type="submit" id="search_btn" class="btn btn-info" name="search">Search</button>
+					</form>
+				</li>
+			</ul>
+		</div>
+	</div>
+</nav>
