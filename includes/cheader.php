@@ -36,6 +36,7 @@ background-color:#393939;
 				$c_area = $row['c_area'];
 				$c_tel = $row['c_tel'];
 				$c_add = $row['c_add'];
+				$c_cat=$row['c_cat'];
 				$c_image = $row['c_image'];
 				$c_cover = $row['c_cover'];			
 				$crecovery_account = $row['crecovery_account'];
@@ -47,16 +48,15 @@ background-color:#393939;
 				?>
 				<li><a href='cprofile.php?<?php echo "c_id=$c_id" ?>'><?php echo"$c_name"?></a></li>
 				<li><a href="uforc.php">Home</a></li>
-				<li><a href="findneeeds.php">Find Needs</a></li>
+				<li><a href="findneeeds.php">Find Companies</a></li>
+				<li><a href="findneeeds.php">Find Induviduals</a></li>
+				<li><a href="findneeeds.php">Find Users</a></li>
 				<?php
 					echo"
 						<li class='dropdown'>
 							<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span><i class='glyphicon glyphicon-chevron-down'></i></span></a>
 							<ul class='dropdown-menu'>
-								<li>
-									<a href='my_post.php?u_id=$c_id'>My Posts <span class='badge badge-secondary'>$posts</span>
-									</a>
-								</li>
+
 								<li>
 									<a href='cedit_profile.php?u_id=$c_id'>Edit Account 
 									</a>
@@ -70,16 +70,7 @@ background-color:#393939;
 				";
 				?>
 			</ul>
-		 	<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<form class="navbar-form navbar-left" method="get" action="results.php">
-						<div class="form-group">
-							<input type="text" class="form-control" name="user_query" placeholder="Search">
-						</div>
-						<button type="submit" id="search_btn" class="btn btn-info" name="search">Search</button>
-					</form>
-				</li>
-			</ul>
+		 	
 		</div>
 	</div>
 </nav>

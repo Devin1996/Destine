@@ -47,17 +47,15 @@ background-color:#393939;
 				?>
 				<li><a href='profile.php?<?php echo "u_id=$user_id" ?>'><?php echo"$first_name"?></a></li>
 				<li><a href="home.php">Home</a></li>
-				<li><a href="findneeeds.php">Find Needs</a></li>
-				<li><a href="messages.php">Messages </a></li>
+				<li><a href="findneeeds.php">Find Companies</a></li>
+				<li><a href="findneeeds.php">Find Induviduals</a></li>
+				<li><a href="findneeeds.php">Find Users</a></li>
 				<?php
 					echo"
 						<li class='dropdown'>
 							<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span><i class='glyphicon glyphicon-chevron-down'></i></span></a>
 							<ul class='dropdown-menu'>
-								<li>
-									<a href='my_post.php?u_id=$user_id'>My Posts <span class='badge badge-secondary'>$posts</span>
-									</a>
-								</li>
+
 								<li>
 									<a href='edit_profile.php?u_id=$user_id'>Edit Account 
 									</a>
@@ -71,16 +69,7 @@ background-color:#393939;
 				";
 				?>
 			</ul>
-		 	<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<form class="navbar-form navbar-left" method="get" action="results.php">
-						<div class="form-group">
-							<input type="text" class="form-control" name="user_query" placeholder="Search">
-						</div>
-						<button type="submit" id="search_btn" class="btn btn-info" name="search">Search</button>
-					</form>
-				</li>
-			</ul>
+		 	
 		</div>
 	</div>
 </nav>

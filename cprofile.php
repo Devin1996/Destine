@@ -27,48 +27,9 @@ else{ ?>
 	    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 	    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 	    <link rel="stylesheet" href="style/homestyle.css" media="all"/>
+		<link rel="stylesheet" href="style/profilestyle.css" media="all"/>
 </head>
 <style>
-#cover-img{
-	height:400px;
-   	width:100%; 	
-}
-#profile_img{
-	position: absolute;
-	top: 160px;
-	left: 40px;
-}
-#update_profile{
-  	position: absolute;
-  	top: 150px;
-  	cursor: pointer;
-  	left: 92px;
-  	border-radius: 4px;
-  	background-color: rgba(0,0,0,0.5);
-	  transform: translate(-50%, -50%);
-	  width:100px;
-}
-#button_profile{
-  	position: absolute;
-  	top: 115%;
-  	left: 50%;
-  	cursor: pointer;
-	transform: translate(-50%, -50%);
-	background-color:#393939;
-}
-#own_posts{
-    border: 5px solid #e6e6e6;
-    padding: 40px 50px;
-}
-#posts_img {
-    height:300px;
-   	width:100%;
-}
-
-.upbtn{
-	background-color:#393939;
-}
-
 
 </style>
 <body>
@@ -80,7 +41,7 @@ else{ ?>
           echo "
          	<div>
 				<div><img id='cover-img' class='img-rounded' src='cover/$c_cover' alt='cover'/></div>
-				<form action='ccprofile.php?u_id=$c_id' method='post' enctype='multipart/form-data'>
+				<form action='cprofile.php?u_id=$c_id' method='post' enctype='multipart/form-data'>
 					<ul class='nav pull-left' style='position: absolute;top: 10px;left: 40px;'>
 				    	<li class='dropdown'>
 				        	<button class='dropdown-toggle btn btn-default' data-toggle='dropdown'>Change Cover</button> 
@@ -181,9 +142,9 @@ else{ ?>
 	<div class="col-sm-2" style="background-color: #e6e6e6; text-align: center; left:0.8%; border-radius: 5px;">
 		<?php
 		echo"
-		<center><h2><strong>About</strong></h2></center><br>
+		<center><h1>About</h2></center>
 		<center><h4><strong>$c_name</strong></h4></center>
-        <p><strong><i style='color:grey;'> $describe_user</i></strong></p><br>
+        <p><strong><b> $describe_user : $c_cat </b></i></strong></p><br>
 		<p><strong>Available In: </strong> $c_area</p><br>
 		<p><strong>Address: </strong>  $c_add</p><br>
 		<p><strong>Hotline: </strong>  $c_tel</p><br>
@@ -215,9 +176,8 @@ else{ ?>
 			$upload_image = $row_posts['upload_image'];
 			$post_date = $row_posts['post_date'];
 			
-			//getting the user who has posted the thread
 			
-			$user = "select * from company where c_id='$c_id' AND posts='yes'"; 
+			$user = "select * from company where c_id='$user_id' AND posts='yes'"; 
 			
 			$run_user = mysqli_query($con,$user);
 
@@ -226,7 +186,7 @@ else{ ?>
 			$user_name = $row_user['c_name'];
 			$user_image = $row_user['c_image'];
 			
-			//now displaying all at once 
+	
 
 			if($content=="No" && strlen($upload_image) >= 1){
 			echo "
@@ -342,7 +302,7 @@ else{ ?>
 			";
 			}
 		}
-			include("functions/cdelete_post.php");
+			include("functions/cdelete.php");
 			
 		}
 	

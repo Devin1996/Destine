@@ -1,0 +1,39 @@
+#cover-img{
+	height:400px;
+   	width:100%;
+}
+#profile_img{
+	position: absolute;
+	top: 160px;
+	left: 40px;
+}
+#update_profile{
+  	position: absolute;
+  	top: 150px;
+  	cursor: pointer;
+  	left: 92px;
+  	border-radius: 4px;
+  	background-color: rgba(0,0,0,0.5);
+	  transform: translate(-50%, -50%);
+	  width:100px;
+}
+#button_profile{
+  	position: absolute;
+  	top: 115%;
+  	left: 50%;
+  	cursor: pointer;
+	transform: translate(-50%, -50%);
+	background-color:#393939;
+}
+#own_posts{
+    border: 5px solid #e6e6e6;
+    padding: 40px 50px;
+}
+#posts_img {
+    height:300px;
+   	width:100%;
+}
+
+.upbtn{
+	background-color:#393939;
+}

@@ -30,14 +30,9 @@ include("includes/connection.php");
 			echo "<script>window.open('induvidual_reg', '_self')</script>";
 			exit();
 		}
-		$rand = rand(1,3);
+	
+		$profile_pic = "images.png";
 
-			if($rand == 1)
-				$profile_pic = "circle-512.png";
-			else if($rand == 2)
-				$profile_pic = "images.png";
-			else if($rand == 3)
-				$profile_pic = "User.png";
 
 			$insert = "insert into ind (if_name,il_name,iuser_name,idescribe_user,i_pass,i_email,i_gender,i_birthday,i_image,i_cover,i_reg_date,istatus,iposts,irecovery_account,i_area,i_cat) 
 				values('$first_name','$last_name','$username','Hello.This is my default status!','$pass','$email','$gender','$birthday','$profile_pic','download.jpg',NOW(),'status','$posts','DCMA.','$area','$cat')";

@@ -36,29 +36,28 @@ background-color:#393939;
 				$user_gender = $row['i_gender'];
 				$user_birthday = $row['i_birthday'];
 				$user_image = $row['i_image'];
-				$user_cover = $row['i_cover'];			
-				$recovery_account = $row['irecovery_account'];
+				$i_cover = $row['i_cover'];			
 				$register_date = $row['i_reg_date'];
+				$i_area = $row['i_area'];
+				$i_cat=$row['i_cat'];
 
 				$user_posts = "select * from iposts where user_id='$i_id'";
 				$run_posts = mysqli_query($con, $user_posts);
 				$posts = mysqli_num_rows($run_posts);
 				?>
-				<li><a href='cprofile.php?<?php echo "i_id=$i_id" ?>'><?php echo"$first_name"?></a></li>
+				<li><a href='inprofile.php?<?php echo "i_id=$i_id" ?>'><?php echo"$first_name"?></a></li>
 				<li><a href="ufori.php">Home</a></li>
-				<li><a href="findusers.php">Find Users</a></li>
+				<li><a href="findneeeds.php">Find Companies</a></li>
+				<li><a href="findneeeds.php">Find Induviduals</a></li>
+				<li><a href="findneeeds.php">Find Users</a></li>
 				<?php
 					echo"
 						<li class='dropdown'>
 							<a href='#' class='dropdown-toggle' data-toggle='dropdown' role='button' aria-haspopup='true' aria-expanded='false'><span><i class='glyphicon glyphicon-chevron-down'></i></span></a>
 							<ul class='dropdown-menu'>
+
 								<li>
-									<a href='imy_post.php?u_id=$i_id'>My Posts <span class='badge badge-secondary'>$posts</span>
-									</a>
-								</li>
-								<li>
-									<a href='iedit_profile.php?u_id=$i_id'>Edit Account 
-									</a>
+									<a href='iedit_profile.php?u_id=$i_id'>Edit Account </a>
 								</li>
 								<li role='separator' class='driver'></li>
 								<li>
@@ -69,16 +68,7 @@ background-color:#393939;
 				";
 				?>
 			</ul>
-		 	<ul class="nav navbar-nav navbar-right">
-				<li class="dropdown">
-					<form class="navbar-form navbar-left" method="get" action="results.php">
-						<div class="form-group">
-							<input type="text" class="form-control" name="user_query" placeholder="Search">
-						</div>
-						<button type="submit" id="search_btn" class="btn btn-info" name="search">Search</button>
-					</form>
-				</li>
-			</ul>
+		 	
 		</div>
 	</div>
 </nav>

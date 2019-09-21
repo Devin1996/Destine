@@ -35,14 +35,9 @@ include("includes/connection.php");
 			echo "<script>window.open('company_reg.php', '_self')</script>";
 			exit();
 		}
-		$rand = rand(1,3);
 
-			if($rand == 1)
-				$profile_pic = "circle-512.png";
-			else if($rand == 2)
-				$profile_pic = "images.png";
-			else if($rand == 3)
-				$profile_pic = "User.png";
+		$profile_pic = "images.png";
+
 
 			$insert = "insert into company (c_name,cuser_name,cdescribe_user,c_tel,c_pass,c_email,c_area,c_cat,c_add,c_image,c_cover,c_reg_date,cstatus,cposts,crecovery_account) 
 				values('$c_name','$username','Company','$tel','$pass','$email','$area','$cat','$add','$profile_pic','download.jpg',NOW(),'status','$posts','DCMA.')";

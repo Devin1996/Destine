@@ -29,14 +29,10 @@ include("includes/connection.php");
 			echo "<script>window.open('signup.php', '_self')</script>";
 			exit();
 		}
-		$rand = rand(1,3);
-
-			if($rand == 1)
-				$profile_pic = "circle-512.png";
-			else if($rand == 2)
+		
 				$profile_pic = "images.png";
-			else if($rand == 3)
-				$profile_pic = "User.png";
+
+			
 
 			$insert = "insert into users (f_name,l_name,user_name,describe_user,user_pass,user_email,user_dis,user_gender,user_birthday,user_image,user_cover,user_reg_date,status,posts,recovery_account) 
 				values('$first_name','$last_name','$username','USER','$pass','$email','$dis','$gender','$birthday','$profile_pic','download.jpg',NOW(),'status','$posts','DCMA.')";
