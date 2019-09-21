@@ -26,8 +26,8 @@ Project management related Tools
 ..................................
 
 
-1.Git Hub Link - 
-2.Trello Link -  
+1.Git Hub Link - https://github.com/Devin1996/Destine
+2.Trello Link -  https://trello.com/b/GRfr44BT
 
 
 Application Setup guide
