@@ -58,7 +58,7 @@ background-color:#393939;
 							<ul class='dropdown-menu'>
 
 								<li>
-									<a href='cedit_profile.php?u_id=$c_id'>Edit Account 
+									<a href='cedit.php?u_id=$c_id'>Edit Account 
 									</a>
 								</li>
 								<li role='separator' class='driver'></li>

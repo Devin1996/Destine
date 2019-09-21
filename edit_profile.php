@@ -77,7 +77,7 @@ else{ ?>
 						<tr>
 							<td style="font-weight: bold;">District</td>
 							<td>
-							<select class="form-control" name="u_country">
+							<select class="form-control" name="user_dis">
 								<option><?php echo $user_dis;?></option>
 								<option>Galle</option>
 								<option>Matara</option>

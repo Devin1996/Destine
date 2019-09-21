@@ -39,7 +39,6 @@ include("includes/connection.php");
 			$query = mysqli_query($con, $insert);
 
 			if ($query) {
-				echo "<script>alert('Well Done $first_name, you are good to go')</script>";
 				echo "<script>window.open('in_log.php', '_self')</script>";
 			}
 			else{
