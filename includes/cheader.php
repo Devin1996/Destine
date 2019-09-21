@@ -3,11 +3,7 @@ include("includes/connection.php");
 include("functions/functions.php");
 
 ?>
-<style>
-#search_btn{
-background-color:#393939;
-}
-</style>
+
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -17,7 +13,7 @@ background-color:#393939;
 			<span class="icon-bar"></span>
 		 	<span class="icon-bar"></span>
 		 	</button>
-		 	<a href="home.php" class="navbar-brand">Destine</a>
+		 	<a href="uforc.php" class="navbar-brand">Destine</a>
 		</div>
 		<div class="collapse navbar-collapse" id="#bs-example-navbar-collapse-1">
 			<ul class="nav navbar-nav">
@@ -48,9 +44,9 @@ background-color:#393939;
 				?>
 				<li><a href='cprofile.php?<?php echo "c_id=$c_id" ?>'><?php echo"$c_name"?></a></li>
 				<li><a href="uforc.php">Home</a></li>
-				<li><a href="findneeeds.php">Find Companies</a></li>
-				<li><a href="findneeeds.php">Find Induviduals</a></li>
-				<li><a href="findneeeds.php">Find Users</a></li>
+				<li><a href="findcforc.php">Find Companies</a></li>
+				<li><a href="findiforc.php">Find Induviduals</a></li>
+				<li><a href="finduforc.php">Find Users</a></li>
 				<?php
 					echo"
 						<li class='dropdown'>

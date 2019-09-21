@@ -2,11 +2,7 @@
 include("includes/connection.php");
 include("functions/functions.php");
 ?>
-<style>
-#search_btn{
-background-color:#393939;
-}
-</style>
+
 <nav class="navbar navbar-default">
 	<div class="container-fluid">
 		<div class="navbar-header">
@@ -47,9 +43,9 @@ background-color:#393939;
 				?>
 				<li><a href='inprofile.php?<?php echo "i_id=$i_id" ?>'><?php echo"$first_name"?></a></li>
 				<li><a href="ufori.php">Home</a></li>
-				<li><a href="findneeeds.php">Find Companies</a></li>
-				<li><a href="findneeeds.php">Find Induviduals</a></li>
-				<li><a href="findneeeds.php">Find Users</a></li>
+				<li><a href="findcfori.php">Find Companies</a></li>
+				<li><a href="findifori.php">Find Induviduals</a></li>
+				<li><a href="findufori.php">Find Users</a></li>
 				<?php
 					echo"
 						<li class='dropdown'>

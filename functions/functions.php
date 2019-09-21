@@ -1,7 +1,7 @@
 <?php 
 
 $con = mysqli_connect("localhost","root","","destine") or die("Connection was not established");
-//Normal user Insert Post
+
 function insertPost(){
 	if(isset($_POST['sub'])){
 		global $con;
@@ -68,7 +68,7 @@ function insertPost(){
 
 	}
 
-	//Company INsert Post
+
 	function cinsertPost(){
 		if(isset($_POST['pub'])){
 			global $con;
@@ -601,7 +601,7 @@ function insertPost(){
 			$upload_image = $row_posts['upload_image'];
 			$post_date = $row_posts['post_date'];
 	
-			//getting the user who has posted the thread
+
 			$user = "select * from users where user_id='$user_id' AND posts='yes'";
 	
 			$run_user = mysqli_query($con,$user);
@@ -610,7 +610,6 @@ function insertPost(){
 			$user_name = $row_user['user_name'];
 			$user_image = $row_user['user_image'];
 	
-			// getting the user session
 			$user_com = $_SESSION['user_email'];
 	
 			$get_com = "select * from users where user_email='$user_com'";
@@ -620,8 +619,6 @@ function insertPost(){
 			$user_com_id = $row_com['user_id'];
 			$user_com_name = $row_com['user_name'];
 	
-	
-			//now displaying all at once
 	
 	
 	
@@ -809,7 +806,7 @@ function insertPost(){
 				$upload_image = $row_posts['upload_image'];
 				$post_date = $row_posts['post_date'];
 		
-				//getting the user who has posted the thread
+
 				$user = "select * from company where user_id='$c_id' AND posts='yes'";
 		
 				$run_user = mysqli_query($con,$user);
@@ -818,7 +815,7 @@ function insertPost(){
 				$user_name = $row_user['c_name'];
 				$user_image = $row_user['c_image'];
 		
-				// getting the user session
+		
 				$user_com = $_SESSION['c_email'];
 		
 				$get_com = "select * from company where c_email='$user_com'";
@@ -829,7 +826,7 @@ function insertPost(){
 				$user_com_name = $row_com['c_name'];
 		
 		
-				//now displaying all at once
+		
 		
 		
 		
@@ -998,7 +995,6 @@ function insertPost(){
 			}
 	
 	
-		//function for displaying user posts
 		function user_posts(){
 	
 	
@@ -1019,7 +1015,7 @@ function insertPost(){
 				$upload_image = $row_posts['upload_image'];
 				$post_date = $row_posts['post_date'];
 	
-				//getting the user who has posted the thread
+
 	
 				$user = "select * from users where user_id='$user_id' AND posts='yes'";
 	
@@ -1055,12 +1051,6 @@ function insertPost(){
 					echo"<script>window.open('my_post.php?u_id=$user_id','_self')</script>";
 				}else{
 	
-	
-	
-	
-	
-	
-				//now displaying all at once
 	
 				if($content=="No" && strlen($upload_image) >= 1){
 	
@@ -1177,148 +1167,7 @@ function insertPost(){
 	
 		}
 	
-		//function for displaying search results
-		function results(){
-	
-		global $con;
-	
-		if(isset($_GET['search'])){
-		$search_query = htmlentities($_GET['user_query']);
-		}
-		$get_posts = "select * from posts where post_content like '%$search_query%' OR upload_image like '%$search_query%'";
-	
-		$run_posts = mysqli_query($con,$get_posts);
-	
-		while($row_posts=mysqli_fetch_array($run_posts)){
-	
-			$post_id = $row_posts['post_id'];
-			$user_id = $row_posts['user_id'];
-			$content = substr($row_posts['post_content'],0,40);
-			$upload_image = $row_posts['upload_image'];
-			$post_date = $row_posts['post_date'];
-	
-			//getting the user who has posted the thread
-	
-			$user = "select * from users where user_id='$user_id' AND posts='yes'";
-	
-			$run_user = mysqli_query($con,$user);
-			$row_user=mysqli_fetch_array($run_user);
-	
-			$user_name = $row_user['user_name'];
-			$first_name = $row_user['f_name'];
-			$last_name = $row_user['l_name'];
-			$user_image = $row_user['user_image'];
-	
-			//now displaying all at once
-			if($content=="No" && strlen($upload_image) >= 1){
-	
-				echo "
-				<div class='row'>
-					<div class='col-sm-3'>
-					</div>
-					<div id='posts' class='col-sm-6'>
-					<div class='row'>
-						<div class='col-sm-2'>
-							<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
-						</div>
-						<div class='col-sm-6'>
-							<h3><a style='text-decoration: none;cursor: pointer;color: #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
-							<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
-						</div>
-						<div class='col-sm-4'>
-	
-						</div>
-					</div>
-					<div class='row'>
-						<div class='col-sm-12'>
-							<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
-						</div>
-					</div><br>
-					<a href='p_view.php?post_id=$post_id' style='float:right;'><button class='btn'>Comment</button></a><br>
-					</div>
-					<div class='col-sm-3'>
-					</div>
-				</div><br><br>
-				";
-	
-			}
-			else if(strlen($content) >= 1 && strlen($upload_image) >= 1){
-	
-				echo "
-				<div class='row'>
-					<div class='col-sm-3'>
-					</div>
-					<div id='posts' class='col-sm-6'>
-					<div class='row'>
-						<div class='col-sm-2'>
-							<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
-						</div>
-						<div class='col-sm-6'>
-							<h3><a style='text-decoration: none;cursor: pointer;color: #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
-							<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
-						</div>
-						<div class='col-sm-4'>
-	
-						</div>
-					</div>
-					<div class='row'>
-						<div class='col-sm-12'>
-							<p>$content</p>
-							<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
-						</div>
-					</div><br>
-					<a href='p_view.php?post_id=$post_id' style='float:right;'><button class='btn'>Comment</button></a><br>
-					</div>
-					<div class='col-sm-3'>
-					</div>
-				</div><br><br>
-				";
-	
-			}
-			else{
-	
-			echo "
-	
-			<div class='row'>
-				<div class='col-sm-3'>
-				</div>
-				<div id='posts' class='col-sm-6'>
-				<div class='row'>
-						<div class='col-sm-2'>
-							<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
-						</div>
-						<div class='col-sm-6'>
-							<h3><a style='text-decoration: none;cursor: pointer;color: #3897f0;' href='user_profile.php?u_id=$user_id'>$user_name</a></h3>
-							<h4><small style='color:black;'>Updated a post on <strong>$post_date</strong></small></h4>
-						</div>
-						<div class='col-sm-4'>
-	
-						</div>
-					</div>
-					<div class='row'>
-						<div class='col-sm-2'>
-						</div>
-						<div class='col-sm-6'>
-							<h3><p>$content</p></h3>
-						</div>
-						<div class='col-sm-4'>
-	
-						</div>
-					</div>
-					<a href='p_view.php?post_id=$post_id' style='float:right;'><button class='btn'>Comment</button></a><br>
-				</div>
-				<div class='col-sm-3'>
-				</div>
-			</div><br><br>
-	
-			";
-		}
-	
-		}
-		}
-	
-	
-		//function for displaying search results
+		
 		function search_user(){
 	
 		global $con;
@@ -1341,7 +1190,7 @@ function insertPost(){
 			$username = $row_user['user_name'];
 			$user_image = $row_user['user_image'];
 	
-			//now displaying all at once
+			
 	
 			echo "
 			<div class='row'>
@@ -1375,4 +1224,122 @@ function insertPost(){
 		}
 	
 		}
+		
+
+		function search_company(){
+	
+			global $con;
+		
+			if(isset($_GET['search_user_btn'])){
+			$search_query = htmlentities($_GET['search_user']);
+			$get_user = "select * from company where c_name like '%$search_query%'";
+			}
+			else{
+			$get_user = "select * from company";
+			}
+		
+			$run_user = mysqli_query($con,$get_user);
+		
+			while($row_user=mysqli_fetch_array($run_user)){
+		
+				$user_id = $row_user['c_id'];
+				$f_name = $row_user['c_name'];
+				$username = $row_user['cuser_name'];
+				$user_image = $row_user['c_image'];
+				$c_cat=$row_user['c_cat'];
+		
+				
+		
+				echo "
+				<div class='row'>
+					<div class='col-sm-3'>
+					</div>
+		
+					<div class='col-sm-6'>
+		
+					<div class='row' id='find_people'>
+					<div class='col-sm-4'>
+					<a style='text-decoration: none;cursor: pointer;color: #3897f0;' href='user_profile.php?u_id=$user_id'>
+					<img class='img-circle' src='users/$user_image' width='150px' height='140px' title='$username' style='float:left; margin:1px;'/>
+					</a>
+					</div><br><br>
+					<div class='col-sm-6'>
+					<a style='text-decoration: none;cursor: pointer;color: #3897f0;' href='c_profile.php?u_id=$user_id'>
+					<strong><h2>$f_name</h2></strong>
+					<strong><h5>$c_cat</h5></strong>
+					</a>
+					</div>
+					<div class='col-sm-3'>
+					</div>
+		
+					</div>
+		
+					</div>
+					<div class='col-sm-4'>
+					</div>
+				</div><br>
+				";
+		
+			}
+		
+			}
+
+
+			function search_in(){
+	
+				global $con;
+			
+				if(isset($_GET['search_user_btn'])){
+				$search_query = htmlentities($_GET['search_user']);
+				$get_user = "select * from ind where if_name like '%$search_query%' OR il_name like '%$search_query%' OR iuser_name like '%$search_query%'";
+				}
+				else{
+				$get_user = "select * from ind";
+				}
+			
+				$run_user = mysqli_query($con,$get_user);
+			
+				while($row_user=mysqli_fetch_array($run_user)){
+			
+					$user_id = $row_user['i_id'];
+					$f_name = $row_user['if_name'];
+					$l_name = $row_user['il_name'];
+					$username = $row_user['iuser_name'];
+					$user_image = $row_user['i_image'];
+					$i_cat = $row_user['i_cat'];
+					
+			
+					echo "
+					<div class='row'>
+						<div class='col-sm-3'>
+						</div>
+			
+						<div class='col-sm-6'>
+			
+						<div class='row' id='find_people'>
+						<div class='col-sm-4'>
+						<a style='text-decoration: none;cursor: pointer;color: #3897f0;' href='user_profile.php?u_id=$user_id'>
+						<img class='img-circle' src='users/$user_image' width='150px' height='140px' title='$username' style='float:left; margin:1px;'/>
+						</a>
+						</div><br><br>
+						<div class='col-sm-6'>
+						<a style='text-decoration: none;cursor: pointer;color: #3897f0;' href='user_profile.php?u_id=i_id'>
+						<strong><h2>$f_name $l_name</h2></strong>
+						<strong><h5>$i_cat</h5></strong>
+						</a>
+						</div>
+						<div class='col-sm-3'>
+						</div>
+			
+						</div>
+			
+						</div>
+						<div class='col-sm-4'>
+						</div>
+					</div><br>
+					";
+			
+				}
+			
+				}
 ?>
