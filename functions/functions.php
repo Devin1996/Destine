@@ -372,7 +372,7 @@ function insertPost(){
 							<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
 							</div>
 							<div class='col-sm-6'>
-								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='user_profile.php?u_id=$c_id'>$c_name</a></h3>
+								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='company_profile.php?u_id=$c_id'>$c_name</a></h3>
 								<h3>$des_usr</h3> 
 								<h4><small>Asked on <strong>$post_date</strong></small></h4>
 							</div>
@@ -384,7 +384,7 @@ function insertPost(){
 							<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'>
 							</div>
 						</div><br>
-						<a href='p_view.php?post_id=$post_id' style='float:right;'><button class='btn'>ASK</button></a><br>
+						<a href='cp_view.php?post_id=$post_id' style='float:right;'><button class='btn'>ASK</button></a><br>
 					</div>
 					<div class='col-sm-3'>
 					</div>
@@ -402,7 +402,7 @@ function insertPost(){
 							<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
 							</div>
 							<div class='col-sm-6'>
-								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='user_profile.php?u_id=$c_id'>$c_name</a></h3> 
+								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='company_profile.php?u_id=$c_id'>$c_name</a></h3> 
 								<h3>$des_usr</h3> 
 								<h4><small>Asked on <strong>$post_date</strong></small></h4>
 							</div>
@@ -415,7 +415,7 @@ function insertPost(){
 							<img id='posts-img' src='imagepost/$upload_image' style='height:350px;'> 
 							</div>
 						</div><br>
-						<a href='p_view.php?post_id=$post_id' style='float:right;'><button class='btn'>ASK</button></a><br>
+						<a href='cp_view.php?post_id=$post_id' style='float:right;'><button class='btn'>ASK</button></a><br>
 					</div>
 					<div class='col-sm-3'>
 					</div>
@@ -433,7 +433,7 @@ function insertPost(){
 							<p><img src='users/$user_image' class='img-circle' width='100px' height='100px'></p>
 							</div>
 							<div class='col-sm-6'>
-								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='user_profile.php?u_id=$c_id'>$c_name</a></h3> 
+								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='company_profile.php?u_id=$c_id'>$c_name</a></h3> 
 								<h3>$des_usr</h3> 
 								<h4><small>Asked on <strong>$post_date</strong></small></h4>
 							</div>
@@ -445,7 +445,7 @@ function insertPost(){
 							<h3><p>$content</p></h3>
 							</div>
 						</div><br>
-						<a href='p_view.php?post_id=$post_id' style='float:right;'><button class='btn'>ASK</button></a><br>
+						<a href='cp_view.php?post_id=$post_id' style='float:right;'><button class='btn'>ASK</button></a><br>
 					</div>
 					<div class='col-sm-3'>
 					</div>
@@ -496,7 +496,7 @@ function insertPost(){
 							<p><img src='users/$i_image' class='img-circle' width='100px' height='100px'></p>
 							</div>
 							<div class='col-sm-6'>
-								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='user_profile.php?u_id=$i_id'>$i_name</a></h3>
+								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='induvidual_profile.php?u_id=$i_id'>$i_name</a></h3>
 								<h4>$des_usr</h4> 
 								<h4><small>Published on <strong>$post_date</strong></small></h4>
 							</div>
@@ -526,7 +526,7 @@ function insertPost(){
 							<p><img src='users/$i_image' class='img-circle' width='100px' height='100px'></p>
 							</div>
 							<div class='col-sm-6'>
-								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='user_profile.php?u_id=$i_id'>$i_name</a></h3> 
+								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='induvidual_profile.php?u_id=$i_id'>$i_name</a></h3> 
 								<h4>$des_usr</h4> 
 								<h4><small>Published on <strong>$post_date</strong></small></h4>
 							</div>
@@ -557,7 +557,7 @@ function insertPost(){
 							<p><img src='users/$i_image' class='img-circle' width='100px' height='100px'></p>
 							</div>
 							<div class='col-sm-6'>
-								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='user_profile.php?u_id=$i_id'>$i_name</a></h3> 
+								<h3><a style='text-decoration:none; cursor:pointer;color:#393939;' href='induvidual_profile.php?u_id=$i_id'>$i_name</a></h3> 
 								<h4>$des_usr</h4> 
 								<h4><small>Published on <strong>$post_date</strong></small></h4>
 							</div>
