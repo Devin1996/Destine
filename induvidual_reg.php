@@ -124,85 +124,7 @@
 					 
 				</div>
 				<div class="1-part">
-					<!-- <form name="Cregform" action="" method="post" validate>
-						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-							<input type="text" class="form-control" name="i_first_name" placeholder="First Name" required="required">
-						</div><br>
-
-						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
-							<input type="text" class="form-control" name="i_last_name" placeholder="Last Name" required="required">
-						</div><br>
-
-                        <div class="input-group"> 
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<input id="iemail" type="email" class="form-control" placeholder="Email" name="i_email" required="required">
-                        </div><br>
-
-                        
- 						
- 						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span> 
-							<select class="form-control" name="i_area" required="required"> 
-								<option disabled>Areas you can provide Service</option> 
-								<option>Isalnd Wide</option>
-								<option>Western Province</option>
-                                <option>Southern Province</option>
-                                <option>Northern Province</option>
-                                <option>Eastern Province</option>
-							</select>
-						</div><br>
-
- 						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-list"></i></span> 
-							<select class="form-control" name="i_category"  required="required"> 
-								<option disabled>Choose a Category</option> 
-								<option>Interior Designer</option>
-								<option>Painter</option>
-								<option>Carpenter</option>
-								<option>Water Supplier</option> 
-								<option>Electrician</option> 
-								<option>Architecture</option> 
-								<option>Gardener</option>
-
-							</select>
-
-						</div><br>
-
-                        <div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-chevron-down"></i></span> 
-							<select class="form-control input-md" name="i_gender" required="required"> 
-								<option disabled>Select your Gender</option> 
-								<option>Male</option>
-								<option>Female</option>
-							</select>
-						</div><br>
-
-						
-                        <div class="input-group"> 
-							<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-							<input type="date" class="form-control input-md" placeholder="Birthday" name="i_birthday" required="required"> </div><br>
-
-
-                        <div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-							<input id="password" type="password" class="form-control" name="i_pass" placeholder="Password" required="required" onkeyup='check();'>
-						</div><br>
-
-						 
-						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-							<input id="cpassword" type="password" class="form-control" name="i_pas" placeholder="Confirm Password" required="required" onkeyup='check();'>
-						</div><br>
-						
-						
-							<a style="text-decoration: none;float: right; color: #393939;" data-toggle="tooltip" title="Signin" href="login_menu.php">Already have an account?</a><br><br>
-							
-                            <center><button id="signup" class="btn btn-info btn-lg" name="sign_up">Sign Up</button></center>
-
-						<?php //include("insert_user.php"); ?> 
-				</form> -->
+					
 				<form action="" method="post">
 						<div class="input-group">
 							<span class="input-group-addon"><i class="glyphicon glyphicon-pencil"></i></span>
@@ -266,7 +188,7 @@
 							<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
 							<input type="date" class="form-control input-md" placeholder="Birthday" name="u_birthday" required="required"> </div><br>
 							
-							<a style="text-decoration: none;float: right; color: #187FAB;" data-toggle="tooltip" title="Signin" href="register_menu.php">Already have an account?</a><br><br>
+							<a style="text-decoration: none;float: right; color: #187FAB;" data-toggle="tooltip" title="Signin" href="in_log.php">Already have an account?</a><br><br>
 							<center><button id="signup" class="btn btn-info btn-lg" name="sign_up"> SignUp</button></center>
 						<?php include("insert_induvidual.php"); ?>
 				</form>

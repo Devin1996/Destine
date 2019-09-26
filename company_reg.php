@@ -93,28 +93,7 @@
 		<div class="col-sm-6" style="Left:1%;">
 			<img src="images/com.jpg" class="img-rounded" title="Destine" width="650px" height="634px">
 			
-			<!-- <div id="centered1" class="centered"><h3 style="color:white;">
-				<span class="glyphicon glyphicon-search"></span>
-					&nbsp&nbsp<strong>Plan Your Project</strong></h3></div>
-
-			<div id="centered2" class="centered"><h3 style="color:white;">
-				<span class="glyphicon glyphicon-search"></span>
-					&nbsp&nbsp<strong>Manage Your Project</strong></h3></div>
-
-			<div id="centered3" class="centered"><h3 style="color:white;">
-				<span class="glyphicon glyphicon-search"></span>		
-					&nbsp&nbsp<strong>Success Your Project</strong></h3></div> -->
-
-                    <!-- <div id="or" class="centered"><h3 style="color:white;">
-					&nbsp&nbsp<strong>OR</strong></h3></div> -->
-           
-                    <!-- <form name="Bbtn" method="post" action="" novalidate>
-            <button id="babtn" class="btn btn-info btn-lg" name="creg">Try Business Accounts</button><br><br>
-            <?php
-					// if (isset($_POST['creg'])) {
-					// 	echo "<script>window.open('company_reg.php','_self')</script>";
-					// }
-				?> -->
+	
 			</div>
 
             <div class="col-sm-6" >
@@ -201,42 +180,7 @@
 
 						 
 
-						<!-- <div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
-							<input id="password" type="password" class="form-control" name="u_pass" placeholder="Password" required="required">
-						</div><br>
-
-						<div class="input-group"> 
-							<span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
-							<input id="email" type="email" class="form-control" placeholder="Email" name="u_email" required="required"></div><br> 
-						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-chevron-down"></i></span> 
-							<select class="form-control" name="u_district" required="required"> 
-								<option disabled>Select your District</option> 
-								<option>Colombo</option>
-								<option>Galle</option>
-								<option>Matara</option>
-								<option>kandy</option> 
-								<option>Anuradhapura</option> 
-								<option>Nuwara Eliya</option> 
-								<option>Jaffna</option> 
-							</select>
-						</div><br>
-
-						<div class="input-group">
-							<span class="input-group-addon"><i class="glyphicon glyphicon-chevron-down"></i></span> 
-							<select class="form-control input-md" name="u_gender" required="required"> 
-								<option disabled>Select your Gender</option> 
-								<option>Male</option>
-								<option>Femail</option>
-							</select>
-						</div><br>
-
-						<div class="input-group"> 
-							<span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
-							<input type="date" class="form-control input-md" placeholder="Birthday" name="u_birthday" required="required"> </div><br>
-							 -->
-							<a style="text-decoration: none;float: right; color: #187FAB;" data-toggle="tooltip" title="Signin" href="register_menu.php">Already have an account?</a><br><br>
+							<a style="text-decoration: none;float: right; color: #187FAB;" data-toggle="tooltip" title="Signin" href="company_login.php">Already have an account?</a><br><br>
 							<center><button id="signup" class="btn btn-info btn-lg" name="sign_up"> SignUp</button></center>
 						<?php include("insert_com.php"); ?>
 				</form>

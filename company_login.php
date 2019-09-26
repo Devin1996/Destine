@@ -80,7 +80,7 @@
 						<input type="password" name="pass" placeholder="Password" required="required" class="form-control input-md"><br>
 						<a style="text-decoration: none; float:right; color: #393939;" data-toggle="tooltip" title="Reset Password" href="forgot_password.php">Forgot Password?</a>
 					</div>
-					<a style="text-decoration: none;float: right; color: #393939;" data-toggle="tooltip" title="Create Account!" href="signup.php">Don't have an account?</a><br><br>
+					<a style="text-decoration: none;float: right; color: #393939;" data-toggle="tooltip" title="Create Account!" href="company_reg.php">Don't have an account?</a><br><br>
 					
 					<center><button id="signin" class="btn btn-info btn-lg" name="login">Login</button></center>
 					<?php include("company_login_q.php"); ?>
