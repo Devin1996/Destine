@@ -85,6 +85,10 @@
 			<div class="well">
 				<center><h1 style="color: white;">Destine</h1></center>
                 <center><i><h5 style="color: white;">Build your dream House,Shop or anthing as you expected</h5></i></center>
+				<div class="col-sm-6" style="top:-90px;">
+		<a href=main.php><img src="images/logo1.jpg" class="img-rounded" title="Destine" width="65px" height="65px">
+		</a>
+		</div> 
 			</div> 
 		</div>
 	</div>
@@ -116,7 +120,8 @@
 					// }
 				?> -->
 			</div>
-
+		
+		
             <div class="col-sm-6" >
             <!-- <div class="col-sm-12"> -->
 			<div class="main-content">

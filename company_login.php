@@ -63,7 +63,11 @@
 <div class="row">
 	<div class="col-sm-12">
 		<div class="well">
-			<center><h1 style="color: white;">Destine</h1></center>
+		<center><h1 style="color: white;">Destine</h1></center>
+		<div class="col-sm-6" style="top:-65px;">
+		<a href=main.php><img src="images/logo1.jpg" class="img-rounded" title="Destine" width="65px" height="65px">
+		</a>
+		</div> 
 		</div> 
 	</div>
 </div>
